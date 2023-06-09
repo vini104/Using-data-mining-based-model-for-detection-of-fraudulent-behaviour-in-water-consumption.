@@ -1,0 +1,101 @@
+{% extends 'users/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+<style>
+    body{
+
+        }
+
+
+     .giver{
+           color: black;
+           font-family: Aldrich;
+           padding: ;
+           background:whitesmoke;
+           border-radius:7px;
+           margin-top:5px;
+     }
+
+
+      .space
+      {
+            padding:6px;
+            border-radius:10px;
+      }
+      input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i],input[type="date" i] {
+            padding: 5px 6px;
+            border-radius:10px;
+      }
+      select{
+          border-radius: 10px;
+             padding: 5px 37px;
+             margin-left: 4px;
+      }
+
+
+</style>
+
+<body>
+
+
+<form method="POST">
+            {% csrf_token %}
+    <div class="space">
+<table class="giver">
+     <tr>
+            <td> User id or Bill no :</td>
+            <td class="space"><input type="text" name="useridorbillno" value=""></td>
+        </tr>
+
+        <tr>
+            <td> Which Branch :</td>
+            <td>
+            <select name="branch">
+                <option>--SELECT--</option>
+                <option value="Iyyapanthangal">Iyyapanthangal</option>
+                <option value="Porur">Porur</option>
+                <option value="Guindy">Guindy</option>
+                <option value="AshokNagar">AshokNagar</option>
+            </select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>No of WaterCane :</td>
+            <td class="space"><input type="text" name="now" value=""></td>
+        </tr>
+        <tr>
+            <td>No of liter :</td>
+            <td class="space"><input type="text" name="nol" value=""></td>
+        </tr>
+        <tr>
+            <td>Amount :</td>
+            <td class="space"><input type="text" name="amount" value=""></td>
+        </tr>
+        <tr>
+            <td>which person deliverd :</td>
+            <td class="space"><input type="text" name="wpd" value=""></td>
+        </tr>
+        <tr>
+            <td>receipt :</td>
+            <td class="space"><input type="radio" name="receipt" value="yes">YES
+            <input type="radio" name="receipt" value="no">NO</td>
+        </tr>
+        <tr>
+            <td> Booking Date:</td>
+            <td class="space"><input type="date" name="bookdate" value=""></td>
+        </tr>
+    <tr>
+            <td> Delivery Date:</td>
+            <td class="space"><input type="date" name="deliverydate" value=""></td>
+        </tr>
+        <tr>
+        <td style="text-align:center;" colspan="2"><input type="submit" name="UPTATE" value="UPDATE" class="space"></td>
+        </tr>
+</table></div>
+    {{we}}
+
+</form>
+{{obj}}
+</body>
+{% endblock %}

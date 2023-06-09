@@ -1,0 +1,74 @@
+{% extends 'admins/base1.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+   .viewfeedback{
+     position: absolute;
+    top:159px;
+    left:px;
+    padding:;
+    height:400px;
+       width: 875px;
+    overflow: auto;
+    background: whitesmoke;
+    }
+    .viewfeedback table{
+    width:40em;
+    text-align:center;
+    font-family: Aldrich;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewfeedback table tr th{
+background:rgb(0,0,0);
+padding:5px;
+color:tomato;
+}
+.viewfeedback table tr td{
+background:rgba(0,0,0,0.5);
+padding:5px;
+}
+.viewfeedback table tr:hover td{
+background:rgba(0,0,0,0.5);
+}
+.viewfeedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:430px;
+ width:360px;
+     margin-top: 21px;
+    margin-left: 937px;
+ background: url("{% static 'image8.gif' %}");
+ background-size: 100%100%;
+ float:left;
+}
+
+</style>
+<div class="viewfeedback"><table>
+    <tr>
+        <th>NAME</th>
+        <th>BRANCHES</th>
+        <th>RATING</th>
+        <th>MOBILENUMBER</th>
+        <th>EMAILID</th>
+        <th>FEEDBACK</th>
+    </tr>
+    <tr>
+    {% for o in objects %}
+    <td>{{o.name}}</td>
+    <td>{{o.branches}}</td>
+    <td>{{o.rating}}</td>
+    <td>{{o.mobilenumber}}</td>
+    <td>{{o.emailid}}</td>
+    <td>{{o.feedback}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+<div class="viewfeedbackimage"></div>
+
+{% endblock %}

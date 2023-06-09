@@ -1,0 +1,115 @@
+{% extends 'users/base.html' %}
+{% block userblock %}
+{% load staticfiles %}
+
+<style>
+body{
+  background: url("{% static 'bg.jpg' %}");
+        background-size: cover;
+        }
+   .feedback{
+    position: absolute;
+    top:200px;
+    left:200px;
+    padding:10px;
+
+}
+
+.feedback table{
+    width:30em;
+    text-align:center;
+    border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+}
+
+.feedback table tr th{
+    color:;
+}
+.feedback table tr th{
+background:
+padding:10px;
+}
+.feedback table tr td{
+background:whitesmoke;
+padding:10px;
+    font-family: aldrich;
+}
+.feedback table tr:hover td{
+background:white;
+}
+ .feedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:280px;
+ width:260px;
+ margin-top:-240px;
+ margin-left:640px;
+
+ background: url("{% static 'image8.gif' %}");
+ background-size: 100%100%;
+
+}
+
+
+
+
+
+</style>
+
+<div class="feedback">
+    <form method="post" autocomplete="off">
+
+    {% csrf_token %}
+
+    <table>
+        <tr>
+            <td>Name </td>
+            <td><input type="text" name="name"> </td>
+        </tr>
+         <tr>
+            <td> Which Branch :</td>
+            <td>
+            <select name="branches">
+                <option>--SELECT--</option>
+                <option value="Iyyapanthangal">Iyyapanthangal</option>
+                <option value="Porur">Porur</option>
+                <option value="Guindy">Guindy</option>
+                <option value="AshokNagar">AshokNagar</option>
+            </select>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>Services :</td>
+            <td class="space"><input type="radio" name="rating" value="5">5
+            <input type="radio" name="rating" value="4">4
+            <input type="radio" name="rating" value="3">3
+            <input type="radio" name="rating" value="2">2
+            <input type="radio" name="rating" value="1">1
+            </td>
+
+        </tr>
+
+
+
+
+        <tr>
+            <td>Mobilenumber</td>
+            <td ><input type="text" name="mobilenumber"> </td>
+        </tr>
+
+        <tr>
+            <td>Feedback</td>
+            <td><textarea name="feedback" cols="40" rows="4"></textarea></td>
+        </tr>
+        <tr>
+        <td colspan="3" style="text-align:center"><input type="submit" name="submit" value="submit" style="background-color:black;color:yellow; padding: 5px 26px 8px; border-radius: 8px; font-family: aldrich;font-size: 21px" ><br></td>
+    </tr>
+    </table>
+</form>
+    <div class="feedbackimage"></div>
+</div>
+{{names}}
+{% endblock %}
